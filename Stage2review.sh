@@ -6,12 +6,14 @@ declare -A Operation
 read -p "Enter First Number :" a
 read -p "Enter Second input:" b
 read -p "Enter Third input :" c
+read -p "Enter Part time hrs :" d
 
 #COMPUTING ARITHMETIC OPERATION
 result1=`echo $(($a + $b * $c))`
 echo "Result:" $result1
 
-result2=`echo $(($a * $b + $c))`
+result2a=`echo $(($a * $b + $c))`
+result2=$(($result2a*$d))
 echo "Result:" $result2
 
 result3=`echo $(($c + $a / $b))`
