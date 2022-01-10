@@ -37,28 +37,19 @@ echo "${array[@]}"
 #SORTING RESULTS IN DECENDING ORDER
 function descendingOrderSort()
 {
-        for(( index=0; index-lt${#array[@]}; index ++ ))
-
+for ((i = 0; i<${#array[@]}; i++))
 	do
-
-		for(( i=0; i-lt${#array[@]}-1; i ++ ))
-
-		do
-
-			if [[ ${array[j]} -gt ${array[j+1]} ]]
-
-			then
-
-				temp=${array[j]}
-
-				array[$j]=${array[$((j+1))]}
-
-				array[$((j+1))]=$temp
-
-			fi
-
-		done
-
+		for((j = 0; j<${#array[@]}-1; j++))
+    		do
+    
+        		if [[ ${array[j]} -lt ${array[$((j+1))]} ]]
+        		then
+            
+            			temp=${array[j]}
+            			array[$j]=${array[$((j+1))]}  
+            			array[$((j+1))]=$temp
+        		fi
+    		done
 	done
 echo "Descending order:" ${array[@]}
 }
@@ -69,30 +60,21 @@ descendingOrderSort ${array[@]}
 #SORTING RESULTS IN ASCENDING ORDER
 function ascendingOrderSort()
 {
-        for(( index=0; index-lt${#array[@]}; index ++ ))
-
+for ((i = 0; i<${#array[@]}; i++))
 	do
-
-		for(( i=0; i-lt${#array[@]}-1; i ++ ))
-
-		do
-
-			if [[ ${array[j]} -lt ${array[j+1]} ]]
-
-			then
-
-				temp=${array[j]}
-
-				array[$j]=${array[$((j+1))]}
-
-				array[$((j+1))]=$temp
-
-			fi
-
-		done
-
+		for((j = 0; j<${#array[@]}-1; j++))
+    		do
+    
+        		if [[ ${array[j]} -gt ${array[$((j+1))]} ]]
+        		then
+            
+            			temp=${array[j]}
+            			array[$j]=${array[$((j+1))]}  
+            			array[$((j+1))]=$temp
+        		fi
+    		done
 	done
-echo "To data ascending order:" ${array[@]}
+echo "Ascending order:" ${array[@]}
 }
 
 #FUNCTION CALL FOR SORTING IN ASCENDING ORDER
